@@ -13,7 +13,7 @@ export const setupPopupListener = (map, layer, popup, setPopupContent) => {
           const properties = data.features[0].properties;
           const fieldLabels = {
             region_name: "Region - 1",
-            locality_name: "Locality",
+            locality_name: "Locality - 1",
             county_name: "County",
             distance_from_tel_aviv_km: "Distance From Tel-Aviv",
           };
