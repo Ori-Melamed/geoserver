@@ -12,15 +12,13 @@ export const setupPopupListener = (map, layer, popup, setPopupContent) => {
         if (data.features && data.features.length > 0) {
           const properties = data.features[0].properties;
           const fieldLabels = {
-            region_name: "Region",
+            region_name: "Region - 1",
             locality_name: "Locality",
             county_name: "County",
             distance_from_tel_aviv_km: "Distance From Tel-Aviv",
           };
           const popupData = Object.entries(fieldLabels)
-            .map(([key, label]) =>
-              properties[key] ? `<strong>${label}:</strong> ${properties[key]}` : ""
-            )
+            .map(([key, label]) => (properties[key] ? `<strong>${label}:</strong> ${properties[key]}` : ""))
             .filter((line) => line !== "")
             .join("<br/>");
           setPopupContent(popupData);
